@@ -27,6 +27,7 @@
                     <th class="px-6 py-3 text-left font-medium text-gray-500 uppercase">Date</th>
                     {{-- <th class="px-6 py-3 text-left font-medium text-gray-500 uppercase">Type</th> --}}
                     <th class="px-6 py-3 text-left font-medium text-gray-500 uppercase">Destinataires</th>
+                    <th class="px-6 py-3 text-left font-medium text-gray-500 uppercase">Expéditeur</th>
                     <th class="px-6 py-3 text-left font-medium text-gray-500 uppercase">Message</th>
                     <th class="px-6 py-3 text-left font-medium text-gray-500 uppercase">Statut</th>
                     <th class="px-6 py-3 text-left font-medium text-gray-500 uppercase">Actions</th>
@@ -51,7 +52,9 @@
                         @php
                             $data = is_string($notification->data) ? json_decode($notification->data, true) : $notification->data;
                         @endphp
-                                            
+                        <td class="px-6 py-4 text-gray-600">
+                            {{ $data['user_name'] ?? $data['title'] ?? '-' }}
+                        </td>
                         <td class="px-6 py-4 text-gray-600">
                             {{ $data['message'] ?? $data['title'] ?? '-' }}
                         </td>
