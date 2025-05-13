@@ -8,7 +8,6 @@ use App\Http\Controllers\MessageController;
 
 require __DIR__.'/auth.php';
 
-// Route::get('/settings', fn () => 'Settings')->name('settings');
 
 Route::middleware(['auth','admin'])->group(function () {
     Route::get('/users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
@@ -38,11 +37,6 @@ Route::middleware(['auth','admin'])->group(function () {
 
 
     Route::resource('roles', \App\Http\Controllers\RoleController::class);
-
-
-
-
-
 });
 
 

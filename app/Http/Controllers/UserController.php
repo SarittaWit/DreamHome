@@ -49,7 +49,7 @@ class UserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'role' => $request->role,
-            'phone' => $request->phone, // ✅
+            'phone' => $request->phone, 
         ]);
 
         return redirect()->route('users.index')->with('success', 'Utilisateur modifié avec succès.');

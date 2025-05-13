@@ -12,7 +12,7 @@ class Property extends Model
         'location',
         'price',
         'status',
-        'image', // 👈 هنا
+        'image', 
     ];
     public function user()
     {

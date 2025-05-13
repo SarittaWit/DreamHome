@@ -58,23 +58,23 @@ class PropertyController extends Controller
             'status' => 'required|in:disponible,vendu',
             'image' => 'nullable|image|max:2048',
         ]);
-    
+
         $data = $request->only(['title', 'description', 'location', 'price', 'status']);
-        $data['user_id'] = auth()->id(); // ✅ ربط العقار بالمستخدم الحالي
-    
+        $data['user_id'] = auth()->id();
+
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('properties', 'public');
         }
-    
-        $property = Property::create($data); // ✅ إنشاء العقار مرة وحدة فقط
-    
+
+        $property = Property::create($data);
+
         // 🔔 إرسال الإشعار إلى جميع الـ admins
         $admins = User::where('role', 'admin')->get();
         foreach ($admins as $admin) {
             $admin->notify(new NewPropertyNotification($property));
         }
-    
-        return redirect()->route('properties.index')->with('success', 'Propriété ajoutée avec succès ✅');
+
+        return redirect()->route('properties.index')->with('success', 'Propriété ajoutée avec succès ');
     }
 
 
