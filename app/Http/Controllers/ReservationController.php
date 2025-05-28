@@ -47,6 +47,4 @@ class ReservationController extends Controller
 
         return redirect()->route('HomePage')->with('success','reservation send with success ');
     }
-
-  
 }

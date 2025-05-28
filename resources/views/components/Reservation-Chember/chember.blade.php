@@ -39,9 +39,6 @@
                         <span><i class="fas fa-ruler-combined text-blue-600 mr-1"></i> 120 m²</span>
                     </div>
                     <div class="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center">
-                        <button class="text-blue-600 hover:text-blue-800 text-sm font-medium">
-                            <i class="far fa-heart mr-1"></i> Favoris
-                        </button>
                         <a href="{{ route('reservation.create')}}"  class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm font-medium">
                             <i class="far fa-calendar-alt mr-1"></i> Visite
                         </a>
@@ -52,6 +49,6 @@
 
 
         <!-- Pagination -->
-        
+
     </div>
 @endsection
