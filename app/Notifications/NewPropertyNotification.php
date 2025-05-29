@@ -26,8 +26,8 @@ class NewPropertyNotification extends Notification
     {
         return [
             'title' => 'Nouvelle propriété ajoutée',
-            'user_name' => auth()->user()->name, 
-            'message' => $this->data['message'],
+            'user_name' => auth()->user()->name,
+            // 'message' => $this->data['message'],
             'property_id' => $this->property->id,
             'action' => 'a ajouté une propriété',
             'timestamp' => now()->toDateTimeString(),
